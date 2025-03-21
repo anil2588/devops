@@ -1,0 +1,95 @@
+<html>
+
+<body style="font-family: Arial, sans-serif; background-color: #f4f4f9; padding: 20px;">
+
+    
+    <!-- Page Title -->
+    <h1 style="text-align: center; color: #333;">Student Registration Form</h1>
+
+
+    
+        <!-- Personal Details Section -->
+        <fieldset style="border: 1px solid #ddd; padding: 15px; margin-bottom: 15px; border-radius: 5px;">
+            <legend style="font-weight: bold;">Personal Details</legend>
+            
+            <!-- Full Name -->
+            <label for="full_name">Full Name:</label>
+            <input type="text" id="full_name" name="full_name" required style="width: 100%; padding: 8px; margin-top: 5px; border-radius: 5px; border: 1px solid #ccc;"><br><br>
+            
+
+             <!-- Father Name -->
+             <label for="father_name">Father Name:</label>
+             <input type="text" id="father_name" name="father_name" required style="width: 100%; padding: 8px; margin-top: 5px; border-radius: 5px; border: 1px solid #ccc;"><br><br>
+
+             <!-- Mother Name -->
+             <label for="mother_name">Mother Name:</label>
+             <input type="text" id="mother_name" name="mother_name" required style="width: 100%; padding: 8px; margin-top: 5px; border-radius: 5px; border: 1px solid #ccc;"><br><br>
+            
+            <!-- Date of Birth -->
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required style="width: 100%; padding: 8px; margin-top: 5px; border-radius: 5px; border: 1px solid #ccc;"><br><br>
+
+
+            <!-- Date of Birth -->
+            <label for="dob">Date of Birth(In Words)  :</label>
+            <textarea id="date" name="dob" rows="4" required style="width: 100%; padding: 8px; margin-top: 5px; border-radius: 5px; border: 1px solid #ccc;"></textarea><br><br>
+
+
+
+	    <!-- Gender -->
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required style="width: 100%; padding: 8px; margin-top: 5px; border-radius: 5px; border: 1px solid #ccc;">
+                <option value="">Select</option>
+                <option value="Male">MALE</option>
+                <option value="Female">FEMALE</option>
+                </select><br><br>
+
+            
+            <div class="form-group">
+                <label for="contact_number"> Enter Mobile Number </label>
+                <input type="text" class="form-control form-control-sm"
+                id="contact_number"
+                name="contact_number" onchange="verifymobile()" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email_id"> Enter Email address </label>
+                    <input type="email"class="form-control form-control-sm"id="email_id"
+                    name="email_id" aria-described by="emailHelp" required>
+                </div>
+
+            <!-- Address -->
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="4" required style="width: 100%; padding: 8px; margin-top: 5px; border-radius: 5px; border: 1px solid #ccc;"></textarea><br><br>
+            
+
+            <form onsubmit="showAlert(event)">
+                <button type="submit">Submit</button>
+            </form>
+        
+
+    </form>
+</body>
+</html>
+
+<script>
+    function verifymobile()
+{
+var mobile = document.getElementById('contact_number')
+var result = /^\d{10}$/;
+if (!result.test(mobile.value)) {
+alert("Invalid mobile number..! Kindly enter valid mobile number")
+mobile.focus()
+}
+else {
+alert("Valid mobile number");
+var email = document.getElementById('email_id');
+email.focus()
+}
+}
+
+function showAlert(event) {
+            event.preventDefault(); // Prevents the form from actually submitting
+            alert("Student Registration successfully!");
+        }
+</script>
